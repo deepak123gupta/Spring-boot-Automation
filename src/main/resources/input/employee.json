@@ -1,0 +1,22 @@
+{
+  "packageName": "com.example.demo",
+  "entity": "Person",
+  "groupId": "com.example.demo",
+  "artifactId": "crud-generator",
+  "version": "1.0-SNAPSHOT",
+  "fields": {
+    "id": "Long",
+    "name": "String",
+    "income": "Double",
+    "address": "String",
+    "dob": "String",
+    "isIndian": "Boolean"
+  },
+  "database": {
+    "url": "jdbc:mysql://localhost:3306/employee_db?createDatabaseIfNotExists=TRUE",
+    "username": "root",
+    "password": "root",
+    "driver": "com.mysql.cj.jdbc.Driver",
+    "ddlAuto": "update"
+  }
+}

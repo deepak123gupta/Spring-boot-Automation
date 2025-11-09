@@ -1,0 +1,12 @@
+package {{packageName}}.service;
+
+import {{packageName}}.entity.{{entity}};
+import java.util.List;
+
+public interface {{entity}}Service {
+{{entity}} save({{entity}} {{entityLower}});
+List<{{entity}}> getAll();
+{{entity}} getById(Long id);
+{{entity}} update(Long id, {{entity}} {{entityLower}});
+void delete(Long id);
+}

@@ -1,0 +1,19 @@
+package {{packageName}}.controller;
+
+import {{packageName}}.entity.{{entity}};
+import {{packageName}}.service.{{entity}}Service;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/{{entityLower}}s")
+public class {{entity}}Controller {
+private final {{entity}}Service service;
+public {{entity}}Controller({{entity}}Service service) { this.service = service; }
+
+@PostMapping public {{entity}} create(@RequestBody {{entity}} {{entityLower}}) { return service.save({{entityLower}}); }
+@GetMapping public List<{{entity}}> getAll() { return service.getAll(); }
+@GetMapping("/{id}") public {{entity}} getById(@PathVariable Long id) { return service.getById(id); }
+@PutMapping("/{id}") public {{entity}} update(@PathVariable Long id, @RequestBody {{entity}} {{entityLower}}) { return service.update(id, {{entityLower}}); }
+@DeleteMapping("/{id}") public void delete(@PathVariable Long id) { service.delete(id); }
+}

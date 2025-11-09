@@ -1,0 +1,24 @@
+package {{packageName}}.service.impl;
+
+import {{packageName}}.entity.{{entity}};
+import {{packageName}}.repository.{{entity}}Repository;
+import {{packageName}}.service.{{entity}}Service;
+import org.springframework.stereotype.Service;
+import java.util.List;
+import org.springframework.web.bind.annotation.*;
+
+@Service
+public class {{entity}}ServiceImpl implements {{entity}}Service {
+private f
+inal {{entity}}Repository repository;
+
+public {{entity}}ServiceImpl({{entity}}Repository repository) {
+this.repository = repository;
+}
+
+@Override public {{entity}} save({{entity}} {{entityLower}}) { return repository.save({{entityLower}}); }
+@Override public List<{{entity}}> getAll() { return repository.findAll(); }
+@Override public {{entity}} getById(Long id) { return repository.findById(id).orElse(null); }
+@Override public {{entity}} update(Long id, {{entity}} {{entityLower}}) { {{entityLower}}.setId(id); return repository.save({{entityLower}}); }
+@Override public void delete(Long id) { repository.deleteById(id); }
+}

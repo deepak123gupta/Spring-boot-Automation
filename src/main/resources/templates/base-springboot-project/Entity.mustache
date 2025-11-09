@@ -1,0 +1,20 @@
+package {{packageName}}.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+public class {{entity}} {
+{{#fields}}
+    {{#isId}}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    {{/isId}}
+    private {{type}} {{name}};
+{{/fields}}
+
+    // getters & setters
+{{#fields}}
+    public {{type}} get{{nameCapital}}() { return this.{{name}}; }
+    public void set{{nameCapital}}({{type}} {{name}}) { this.{{name}} = {{name}}; }
+{{/fields}}
+}
